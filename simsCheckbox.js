@@ -45,11 +45,6 @@
         //select/unselect text
         selectAllText: 'Select/Unselect All',
 
-        //callbacks
-        onLoadStart: function (box) {}, //Right after the button has been clicked
-    
-        onLoadDone: function (box) {} //When the source has been loaded
-    
     }, options);
 
     //set some css for the selector
@@ -82,8 +77,6 @@
         //toggle the item
         $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
 
-    		//get classess for selected groups
-        //fnCheckMyClassGroups();
 		  });         
 
     });
