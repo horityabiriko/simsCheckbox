@@ -77,8 +77,7 @@
         //toggle the item
         $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
 
-		  });         
-
+      });
     });
     
     //set checkAll button
@@ -99,15 +98,15 @@
 
         //if all items are selected then select-all button is checked
         //if one of the items is unselected then select-all button is unchecked
-  			if( $(this).hasClass("btn-default") )
-  			{
-  				selectorElt.find(settings.element + '.sims-selectable').addClass(settings.uncheckedClass).removeClass(settings.checkedClass).find('i').addClass('fa-' + settings.titleIcon).removeClass('fa-check-' + settings.titleIcon);
-  			}
-  			else
-  			{
-  				selectorElt.find(settings.element + '.sims-selectable').removeClass(settings.uncheckedClass).addClass(settings.checkedClass).find('i').removeClass('fa-' + settings.titleIcon).addClass('fa-check-' + settings.titleIcon);
-  			}
-		  });
+        if( $(this).hasClass("btn-default") )
+        {
+          selectorElt.find(settings.element + '.sims-selectable').addClass(settings.uncheckedClass).removeClass(settings.checkedClass).find('i').addClass('fa-' + settings.titleIcon).removeClass('fa-check-' + settings.titleIcon);
+        }
+        else
+        {
+          selectorElt.find(settings.element + '.sims-selectable').removeClass(settings.uncheckedClass).addClass(settings.checkedClass).find('i').removeClass('fa-' + settings.titleIcon).addClass('fa-check-' + settings.titleIcon);
+        }
+      });
     }    
   }
 })(jQuery);
