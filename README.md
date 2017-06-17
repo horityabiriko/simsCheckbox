@@ -4,7 +4,7 @@ This plugin has been developed first for SmartClass Project [www.smartclass.us]
 
 Installation
 ---
-After download it, add after jQuery
+After downloading the files, add like below after jQuery
 
 ```html
 <!-- jQuery simsCheckbox plugin -->
