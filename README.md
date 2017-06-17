@@ -22,6 +22,34 @@ $(document).ready(function (){
 });
 ```
 
+Example
+---
+
+Set your html elements to be styled
+
+```html
+<ul class="sims-batch-students">
+    <li>Jamie Blue</li>
+    <li>Mike Tennis</li>
+    <li checked>Quentin Hiker</li>
+</ul>
+```
+
+use default options
+
+```js
+$(document).ready(function (){
+    $(".sims-batch-students").simsCheckbox();
+});
+```
+Before
+
+![File Input Screenshot](https://www.smartclass.us/img/plugins/simsCheckbox/before.png)
+
+After
+
+![File Input Screenshot](https://www.smartclass.us/img/plugins/simsCheckbox/after.png)
+
 Plugin Options
 ---
 The plugin supports these following options:
@@ -31,4 +59,7 @@ _string_ sets a certain height to the selector e.g. 400px. If it is set then ove
 
 #### element
 _string_ set the html element to be styled as checkbox. Defaults to `'li'`.
+
+#### checkboxClass
+_string_ set the class of checkbox elements. Defaults to `'btn btn-block btn-social'`.
 
