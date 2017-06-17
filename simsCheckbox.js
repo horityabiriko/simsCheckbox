@@ -7,7 +7,7 @@
  * for SmartClass Project [www.smartclass.us]
  * -------------------------
  */
-
+ 
 (function($) {
 
   // vars
@@ -18,16 +18,16 @@
     
     var selectorElt = this;
     
-    // Render options
+    //settings
     var settings = $.extend({
     
-        //fix height
+        //selector height
         height: '',
         
         //element
         element: "li",
     
-        //File source to be loaded (e.g: ajax/src.php)
+        //checkbox class
         checkboxClass: "btn btn-block btn-social",
         
         //title icon
@@ -40,7 +40,7 @@
         checkedClass: "btn-warning",
         
         //select/unselect all button
-        selectAllBtn: true,
+        selectAllBtn: false,
 
         //select/unselect text
         selectAllText: 'Select/Unselect All',
