@@ -58,7 +58,7 @@ Plugin Options
 The plugin supports these following options
 
 #### height
-_string_ sets a certain height to the selector e.g. 400px. If it is set then overflow will be set to auto as well. Defaults to `''`.
+_string_ sets a certain height to the selector e.g. 400px. If it is set different than `auto` then the overflow style will be set to auto as well. Defaults to `'auto'`.
 
 #### element
 _string_ sets the html element to be styled as checkbox. Defaults to `'li'`.
