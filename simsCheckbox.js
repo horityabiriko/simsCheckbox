@@ -59,7 +59,7 @@
     
     //get elements and handle
     selectorElt.find(settings.element).each(function(i){
-      _elt=$(this), _title=_elt.text();
+      _elt=$(this), _title=_elt.html();
       
       //add checkbox class
       _elt.addClass(settings.checkboxClass);
