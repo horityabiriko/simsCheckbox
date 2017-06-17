@@ -2,8 +2,12 @@
  * SmartClass Checkbox plugin
  * ===================================
  *
+ * simsCheckbox.js
+ * developed by Mert Simsek (simsek97@gmail.com)
+ * for SmartClass Project [www.smartclass.us]
+ * -------------------------
  */
- 
+
 (function($) {
 
   // vars
