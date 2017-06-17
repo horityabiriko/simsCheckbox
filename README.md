@@ -34,7 +34,7 @@ Set your html elements to be styled
 <ul class="sims-batch-students">
     <li>Jamie Blue</li>
     <li>Mike Tennis</li>
-    <li checked>Quentin Hiker</li>
+    <li class="checked">Quentin Hiker</li>
 </ul>
 ```
 
