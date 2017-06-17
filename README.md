@@ -20,8 +20,10 @@ A simple way to create Bootstrap style checkboxes
 $(document).ready(function (){
     $("selector").simsCheckbox();
 });
+```
 
-### Plugin Options
+Plugin Options
+---
 The plugin supports these following options:
 
 #### height
