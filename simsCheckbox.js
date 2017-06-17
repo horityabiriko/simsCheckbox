@@ -69,16 +69,16 @@
       else _elt.addClass(settings.uncheckedClass).html('<i class="fa fa-fw fa-' + settings.titleIcon + '"></i> ' + _title);
       
       //set click event if it is not disabled
-      if(!_elt.hasClass('disabled'))
-      {
-        _elt.off('click').on('click', function (e) {
-          e.preventDefault();
-  
-          //toggle the item
-          $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
-  
-        });
-      }
+      _elt.off('click').on('click', function (e) {
+        e.preventDefault();
+        
+        //if the element is disabled then do nothing
+        if($(this).hasClass('disabled')) return false;
+        
+        //toggle the item
+        $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
+
+      });
     });
     
     //set checkAll button
