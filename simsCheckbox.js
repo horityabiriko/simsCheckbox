@@ -22,7 +22,7 @@
     var settings = $.extend({
     
         //selector height
-        height: '',
+        height: 'auto',
         
         //element
         element: "li",
@@ -50,8 +50,9 @@
     //set some css for the selector
     selectorElt.css({'margin': '0', 'padding': '0'});
     
-    //make height of the selector first
-    if(settings.height != '') selectorElt.css({'height': settings.height, 'overflow': 'auto'});
+    //set the height of the selector first
+    if(settings.height == 'auto') selectorElt.css('height', 'auto');
+    else selectorElt.css({'height': settings.height, 'overflow': 'auto'});
 
     //add an identifier class to the elements
     selectorElt.find(settings.element).addClass('sims-selectable');
