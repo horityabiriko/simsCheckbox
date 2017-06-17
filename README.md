@@ -53,6 +53,22 @@ After
 
 ![File Input Screenshot](https://www.smartclass.us/img/plugins/simsCheckbox/after.png)
 
+
+Example (disabled checkbox)
+---
+
+Add `disabled` class to your html elements which you do not want them clickable
+
+```html
+<ul class="sims-batch-students">
+    <li>Jamie Blue</li>
+    <li class="disabled">Mike Tennis</li>
+    <li class="checked">Quentin Hiker</li>
+    <li class="checked disabled">John Spark</li>
+</ul>
+```
+
+
 Plugin Options
 ---
 The plugin supports these following options
