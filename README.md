@@ -9,7 +9,7 @@ After downloading the files, add like below after jQuery
 ```html
 <!-- jQuery simsCheckbox plugin -->
 
-<link href=='path/to/plugin/simsCheckbox.css' rel="stylesheet" type="text/css" />
+<link href=='path/to/plugin/simsCheckbox.css' rel='stylesheet' type='text/css' />
 
 <script src='path/to/plugin/simsCheckbox.js' type='text/javascript'></script>
 ```
