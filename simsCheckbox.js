@@ -68,14 +68,17 @@
       if(_elt.hasClass('checked')) _elt.addClass(settings.checkedClass).html('<i class="fa fa-fw fa-check-' + settings.titleIcon + '"></i> ' + _title);
       else _elt.addClass(settings.uncheckedClass).html('<i class="fa fa-fw fa-' + settings.titleIcon + '"></i> ' + _title);
       
-      //set click event
-      _elt.off('click').on('click', function (e) {
-        e.preventDefault();
-
-        //toggle the item
-        $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
-
-      });
+      //set click event if it is not disabled
+      if(!_elt.hasClass('disabled'))
+      {
+        _elt.off('click').on('click', function (e) {
+          e.preventDefault();
+  
+          //toggle the item
+          $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
+  
+        });
+      }
     });
     
     //set checkAll button
@@ -98,11 +101,11 @@
         //if one of the items is unselected then select-all button is unchecked
         if( $(this).hasClass("btn-default") )
         {
-          selectorElt.find(settings.element + '.sims-selectable').addClass(settings.uncheckedClass).removeClass(settings.checkedClass).find('i').addClass('fa-' + settings.titleIcon).removeClass('fa-check-' + settings.titleIcon);
+          selectorElt.find(settings.element + '.sims-selectable:not(.disabled)').addClass(settings.uncheckedClass).removeClass(settings.checkedClass).find('i').addClass('fa-' + settings.titleIcon).removeClass('fa-check-' + settings.titleIcon);
         }
         else
         {
-          selectorElt.find(settings.element + '.sims-selectable').removeClass(settings.uncheckedClass).addClass(settings.checkedClass).find('i').removeClass('fa-' + settings.titleIcon).addClass('fa-check-' + settings.titleIcon);
+          selectorElt.find(settings.element + '.sims-selectable:not(.disabled)').removeClass(settings.uncheckedClass).addClass(settings.checkedClass).find('i').removeClass('fa-' + settings.titleIcon).addClass('fa-check-' + settings.titleIcon);
         }
       });
     }    
