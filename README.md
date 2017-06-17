@@ -52,14 +52,35 @@ After
 
 Plugin Options
 ---
-The plugin supports these following options:
+The plugin supports these following options
 
 #### height
 _string_ sets a certain height to the selector e.g. 400px. If it is set then overflow will be set to auto as well. Defaults to `''`.
 
 #### element
-_string_ set the html element to be styled as checkbox. Defaults to `'li'`.
+_string_ sets the html element to be styled as checkbox. Defaults to `'li'`.
+
 
 #### checkboxClass
-_string_ set the class of checkbox elements. Defaults to `'btn btn-block btn-social'`.
+_string_ sets the class of checkbox elements. Defaults to `'btn btn-block btn-social'`.
+
+
+#### titleIcon
+_string_ sets the icon of checkbox title. Defaults to `'square-o'`.
+
+
+#### uncheckedClass
+_string_ sets the class of the checkbox when it is not checked. Defaults to `'btn-default'`.
+
+
+#### checkedClass
+_string_ sets the class of the checkbox when it is checked. Defaults to `'btn-warning'`.
+
+
+#### selectAllBtn
+_boolean_ sets whether to add a `Select/Unselect All` checkbox or not to the bottom of the list. If you turn it to be true then be advised to use `selectAllText` option in your language. Defaults to `false`.
+
+
+#### selectAllText
+_string_ sets the title of the `Select/Unselect All` checkbox. Applies if `selectAllBtn` is true. Defaults to `'Select/Unselect All'`.
 
