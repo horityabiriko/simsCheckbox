@@ -2,7 +2,7 @@
 simsCheckbox jQuery Plugin is a plugin to create Bootstrap style checkboxes easily.
 This plugin has been developed first for SmartClass Project [www.smartclass.us]
 
-##Instalation##
+Installation
 ---
 After download it, add after jQuery
 
@@ -11,7 +11,7 @@ After download it, add after jQuery
 <script src='path/to/plugin/simsCheckbox.js' type='text/javascript'></script>
 ```
 
-##Simple Usage##
+Simple Usage
 ---
 
 A simple way to create Bootstrap style checkboxes
@@ -20,3 +20,13 @@ A simple way to create Bootstrap style checkboxes
 $(document).ready(function (){
     $("selector").simsCheckbox();
 });
+
+### Plugin Options
+The plugin supports these following options:
+
+#### height
+_string_ sets a certain height to the selector e.g. 400px. If it is set then overflow will be set to auto as well. Defaults to `''`.
+
+#### element
+_string_ set the html element to be styled as checkbox. Defaults to `'li'`.
+
