@@ -65,11 +65,8 @@
       _elt.addClass(settings.checkboxClass);
       
       //add checked or unchecked class
-      if(_elt.hasClass('checked')) _elt.addClass(settings.checkedClass);
-      else _elt.addClass(settings.uncheckedClass);
-      
-      //set title icon
-      _elt.html('<i class="fa fa-fw fa-' + settings.titleIcon + '"></i> ' + _title);
+      if(_elt.hasClass('checked')) _elt.addClass(settings.checkedClass).html('<i class="fa fa-fw fa-check-' + settings.titleIcon + '"></i> ' + _title);
+      else _elt.addClass(settings.uncheckedClass).html('<i class="fa fa-fw fa-' + settings.titleIcon + '"></i> ' + _title);
       
       //set click event
       _elt.off('click').on('click', function (e) {
