@@ -64,7 +64,7 @@
       _elt.addClass(settings.checkboxClass);
       
       //add checked or unchecked class
-      if(_elt.is('checked')) _elt.addClass(settings.checkedClass);
+      if(_elt.hasClass('checked')) _elt.addClass(settings.checkedClass);
       else _elt.addClass(settings.uncheckedClass);
       
       //set title icon
@@ -84,7 +84,7 @@
     if(settings.selectAllBtn)
     {
       //test all checked or not
-      var allChecked = (selectorElt.find(settings.element).length == selectorElt.find(settings.element).is('checked').length) ? true : false;
+      var allChecked = (selectorElt.find(settings.element).length == selectorElt.find(settings.element + '.checked').length) ? true : false;
       var selectAllBtnElt = $( '<' + settings.element +  ' class="sims-btn-select-all"></' + settings.element + '>' ).addClass(settings.checkboxClass + ' ' + (allChecked ? settings.checkedClass : settings.uncheckedClass)).html('<i class="fa fa-fw fa-' + (allChecked ? 'check-' : '') + settings.titleIcon + '"></i> '  + settings.selectAllText);
       
       selectorElt.append( selectAllBtnElt );
