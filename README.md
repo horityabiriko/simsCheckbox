@@ -68,6 +68,43 @@ Add `disabled` class to your html elements which you do not want them clickable
 </ul>
 ```
 
+![File Input Screenshot](https://www.smartclass.us/img/plugins/simsCheckbox/disabled.png)
+
+
+Example (callback event)
+---
+
+
+```html
+<div class="panel panel-default">
+	<div class="panel-heading">Students</div>
+	<div class="panel-body">
+		<ul class="sims-batch-students">
+		    <li>Jamie Blue</li>
+		    <li class="disabled">Mike Tennis</li>
+		    <li class="checked">Quentin Hiker</li>
+		    <li class="checked disabled">John Spark</li>
+		</ul>
+	</div>
+</div>
+```
+
+```js
+$(document).ready(function (){
+    $(".sims-batch-students").simsCheckbox({
+        ifChecked: function() {
+            console.log('checked');
+        },
+        ifUnchecked: function() {
+            console.log('unchecked');
+        },
+        ifToggled: function() {
+            console.log('toggled');
+        }
+    });
+});
+```
+
 
 Plugin Options
 ---
