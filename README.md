@@ -73,33 +73,15 @@ Plugin Options
 ---
 The plugin supports these following options
 
-#### height
-_string_ sets a certain height to the selector e.g. 400px. If it is set different than `auto` then the overflow style will be set to auto as well. Defaults to `'auto'`.
-
-#### element
-_string_ sets the html element to be styled as checkbox. Defaults to `'li'`.
-
-
-#### checkboxClass
-_string_ sets the class of checkbox elements. Defaults to `'btn btn-block btn-social'`.
-
-
-#### titleIcon
-_string_ sets the icon of checkbox title. Defaults to `'square-o'`.
-
-
-#### uncheckedClass
-_string_ sets the class of the checkbox when it is not checked. Defaults to `'btn-default'`.
-
-
-#### checkedClass
-_string_ sets the class of the checkbox when it is checked. Defaults to `'btn-warning'`.
-
-
-#### selectAllBtn
-_boolean_ sets whether to add a `Select/Unselect All` checkbox or not to the bottom of the list. If you turn it to be true then be advised to use `selectAllText` option in your language. Defaults to `false`.
-
-
-#### selectAllText
-_string_ sets the title of the `Select/Unselect All` checkbox. Applies if `selectAllBtn` is true. Defaults to `'Select/Unselect All'`.
-
+Name|Type|Default|Description|
+---|---|---|---
+height|string|`'auto'`|sets a certain height to the selector e.g. `400px`. If it is set different than `auto` then the overflow style will be set to auto as well
+element|string|`'li'`|sets the html element to be styled as checkbox
+titleIcon|string|`'square-o'`|sets the icon of checkbox title. This should be from Font Awesome icons and have a pair preceded by the `check-`. Possible values are `circle`, `circle-o`, `square`, `square-o`
+uncheckedClass|string|`'btn-default'`|sets the class of the checkbox when it is <b>not</b> checked. Possible values are `btn-default`, `btn-info`, `btn-warning`, `btn-danger`, `btn-primary`
+checkedClass|string|`'btn-warning'`|sets the class of the checkbox when it is checked. This is supposed to be different than uncheckedClass value. Possible values are `btn-default`, `btn-info`, `btn-warning`, `btn-danger`, `btn-primary`
+selectAllBtn|boolean|`false`|sets whether to add a `Select/Unselect All` checkbox or not to the bottom of the list. If you turn it to be true then be advised to use `selectAllText` option in your language. Possible values are `false`, `true`
+selectAllText|string|`'Select/Unselect All'`|sets the title of the `Select/Unselect All` checkbox. Applies if `selectAllBtn` is true
+ifChecked|function|`null`|function that is initiated right after the click event if the checkbox is checked
+ifUnChecked|function|`null`|function that is initiated right after the click event if the checkbox is not checked
+ifToggled|function|`null`|function that is initiated right after the checkbox toggles
