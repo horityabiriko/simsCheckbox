@@ -44,6 +44,15 @@
     
             //select/unselect text
             selectAllText: 'Select/Unselect All',
+            
+            //callback fn ifChecked
+            ifChecked: function() {},
+
+            //callback fn ifUnChecked
+            ifUnChecked: function() {},
+
+            //callback fn ifToggled
+            ifToggled: function() {},
     
         }, options);
 
@@ -81,7 +90,10 @@
                     
                     //toggle the item
                     $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
-                
+
+                    //callback
+                    clickCheckbox($(this));
+                    
                 }); //end _elt click
               
             }); //end selectorElt each
@@ -98,26 +110,45 @@
                 
                 //set click event for the selectAll button
                 selectorElt.find('.sims-btn-select-all').off('click').on('click', function (e) {
-                e.preventDefault();
-                
-                //toggle the item
-                $(this).toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
-                
-                //if all items are selected then select-all button is checked
-                //if one of the items is unselected then select-all button is unchecked
-                if( $(this).hasClass("btn-default") )
-                {
-                    selectorElt.find(settings.element + '.sims-selectable:not(.disabled)').addClass(settings.uncheckedClass).removeClass(settings.checkedClass).find('i').addClass('fa-' + settings.titleIcon).removeClass('fa-check-' + settings.titleIcon);
-                }
-                else
-                {
-                    selectorElt.find(settings.element + '.sims-selectable:not(.disabled)').removeClass(settings.uncheckedClass).addClass(settings.checkedClass).find('i').removeClass('fa-' + settings.titleIcon).addClass('fa-check-' + settings.titleIcon);
-                }
+                    
+                    //prevent default events
+                    e.preventDefault();
+                    
+                    //get button
+                    var thisButton = $(this);
+                    
+                    //toggle the item
+                    thisButton.toggleClass(settings.uncheckedClass).toggleClass(settings.checkedClass).find('i').toggleClass('fa-' + settings.titleIcon).toggleClass('fa-check-' + settings.titleIcon);
+                    
+                    //if all items are selected then select-all button is checked
+                    //if one of the items is unselected then select-all button is unchecked
+                    selectorElt.find(settings.element + '.sims-selectable:not(.disabled)').each(function(){
+                    
+                        //fix classes of the items
+                        if( thisButton.hasClass("btn-default") ) $(this).addClass(settings.uncheckedClass).removeClass(settings.checkedClass).find('i').addClass('fa-' + settings.titleIcon).removeClass('fa-check-' + settings.titleIcon);
+                        else $(this).removeClass(settings.uncheckedClass).addClass(settings.checkedClass).find('i').removeClass('fa-' + settings.titleIcon).addClass('fa-check-' + settings.titleIcon);
+                        
+                        //trigger click event for the items
+                        $(this).trigger("click");
+                    
+                    });
                 
                 });
               
             } //end if
         
+            function clickCheckbox(item) {
+                
+                //check if the button checked or unchecked
+                //then call function properly
+                if(item.hasClass(settings.checkedClass)) settings.ifChecked.call(item);
+                else settings.ifUnChecked.call(item);
+                
+                //call toggle function anyways
+                settings.ifToggled.call(item);
+                
+            }
+            
         }); //end return
         
     } //end function
