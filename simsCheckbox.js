@@ -2,10 +2,10 @@
  * SmartClass Checkbox plugin
  * ===================================
  *
- * simsCheckbox.js
  * developed by Mert Simsek (simsek97@gmail.com)
  * for SmartClass Project [www.smartclass.us]
  * -------------------------
+ * @usage $("#element").simsCheckbox();
  */
  
 (function($) {
@@ -16,7 +16,8 @@
     //plugin init
     $.fn.simsCheckbox = function(options) {
     
-        var selectorElt = this;
+        var selectorElt = this,
+            checkboxClass = "btn btn-block btn-social";
     
         //settings
         var settings = $.extend({
@@ -27,9 +28,6 @@
             //element
             element: "li",
         
-            //checkbox class
-            checkboxClass: "btn btn-block btn-social",
-            
             //title icon
             titleIcon: "square-o",
     
@@ -71,17 +69,17 @@
             //get elements and handle
             selectorElt.find(settings.element).each(function(i) {
               
-                _elt=$(this), _title=_elt.html();
+                var simsElement=$(this), simsElementTitle=simsElement.html();
                 
                 //add checkbox class
-                _elt.addClass(settings.checkboxClass);
+                simsElement.addClass(checkboxClass);
                 
                 //add checked or unchecked class
-                if(_elt.hasClass('checked')) _elt.addClass(settings.checkedClass).html('<i class="fa fa-fw fa-check-' + settings.titleIcon + '"></i> ' + _title);
-                else _elt.addClass(settings.uncheckedClass).html('<i class="fa fa-fw fa-' + settings.titleIcon + '"></i> ' + _title);
+                if(simsElement.hasClass('checked')) simsElement.addClass(settings.checkedClass).html('<i class="fa fa-fw fa-check-' + settings.titleIcon + '"></i> ' + simsElementTitle);
+                else simsElement.addClass(settings.uncheckedClass).html('<i class="fa fa-fw fa-' + settings.titleIcon + '"></i> ' + simsElementTitle);
                 
                 //set click event if it is not disabled
-                _elt.off('click').on('click', function (e) {
+                simsElement.off('click').on('click', function (e) {
     
                     e.preventDefault();
                     
@@ -94,7 +92,7 @@
                     //callback
                     clickCheckbox($(this));
                     
-                }); //end _elt click
+                }); //end simsElement click
               
             }); //end selectorElt each
             
@@ -104,7 +102,7 @@
               
                 //test all checked or not
                 var allChecked = (selectorElt.find(settings.element).length == selectorElt.find(settings.element + '.checked').length) ? true : false;
-                var selectAllBtnElt = $( '<' + settings.element +  ' class="sims-btn-select-all"></' + settings.element + '>' ).addClass(settings.checkboxClass + ' ' + (allChecked ? settings.checkedClass : settings.uncheckedClass)).html('<i class="fa fa-fw fa-' + (allChecked ? 'check-' : '') + settings.titleIcon + '"></i> '  + settings.selectAllText);
+                var selectAllBtnElt = $( '<' + settings.element +  ' class="sims-btn-select-all"></' + settings.element + '>' ).addClass(checkboxClass + ' ' + (allChecked ? settings.checkedClass : settings.uncheckedClass)).html('<i class="fa fa-fw fa-' + (allChecked ? 'check-' : '') + settings.titleIcon + '"></i> '  + settings.selectAllText);
                 
                 selectorElt.append( selectAllBtnElt );
                 
