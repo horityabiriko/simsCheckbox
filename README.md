@@ -112,6 +112,7 @@ The plugin supports these following options
 
 Name|Type|Default|Description|
 ---|---|---|---
+btnStyle|string|`'checkbox'`|sets how buttons are gonna treat either `checkbox` or `radio` button. Possible values are `checkbox`, `radio`
 height|string|`'auto'`|sets a certain height to the selector e.g. `400px`. If it is set different than `auto` then the overflow style will be set to auto as well
 element|string|`'li'`|sets the html element to be styled as checkbox
 titleIcon|string|`'square-o'`|sets the icon of checkbox title. This should be from Font Awesome icons and have a pair preceded by the `check-`. Possible values are `circle`, `circle-o`, `square`, `square-o`
