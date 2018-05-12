@@ -63,7 +63,7 @@
         
         return selectorElt.each(function(){
                              
-            simsThis = $(this);
+            var simsThis = $(this);
             
             //set some css for the selector
             simsThis.css({'margin': '0', 'padding': '1px'});
