@@ -2,15 +2,21 @@
 simsCheckbox jQuery Plugin is a plugin to create Bootstrap style checkboxes easily.
 This plugin has been developed first for SmartClass Project [www.smartclass.us]
 
+In order for this component to work font awesome and bootstrap are required.
+
 Installation
 ---
 After downloading the files, add like below after jQuery
 
 ```html
+<!-- prerequisites -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <!-- jQuery simsCheckbox plugin -->
-
 <link href=='path/to/plugin/simsCheckbox.css' rel='stylesheet' type='text/css' />
-
 <script src='path/to/plugin/simsCheckbox.js' type='text/javascript'></script>
 ```
 
