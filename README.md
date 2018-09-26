@@ -101,7 +101,7 @@ $(document).ready(function (){
         ifChecked: function() {
             console.log('checked');
         },
-        ifUnchecked: function() {
+        ifUnChecked: function() {
             console.log('unchecked');
         },
         ifToggled: function() {
